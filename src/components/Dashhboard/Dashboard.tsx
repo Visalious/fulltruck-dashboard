@@ -88,7 +88,7 @@ const Dashboard = () => {
         <Spin className="w-full h-[100vh] flex justify-center items-center" />
       ) : (
         <>
-          <div className="forCards:justify-center mobile:bg-[#FFFFFF80] flex mobile:flex-col gap-3 px-5 fixed w-full max-w-[2400px] z-20">
+          <div className="forCards:justify-center mobile:bg-[#FFFFFF80] flex mobile:flex-col gap-3 px-5 fixed w-full  z-20">
             <RangePicker
               value={[startDate, endDate]}
               allowClear={false}
@@ -133,12 +133,12 @@ const Dashboard = () => {
               <Option value="month">Month</Option>
             </Select>
           </div>
-          <div className="w-full max-w-[2400px] pt-12 mobile:pt-[125px]">
+          <div className="w-full  pt-12 mobile:pt-[125px]">
             {data?.scalars && <Scalars data={data?.scalars} />}
           </div>
           <Row
             gutter={windowWidth > 990 ? [20, 20] : [0, 20]}
-            className="flex justify-center items-center w-full max-w-[2400px] py-[30px] px-5"
+            className="flex justify-center items-center w-full  py-[30px] px-5"
           >
             <Col
               xs={24}
@@ -163,7 +163,7 @@ const Dashboard = () => {
               {data?.data_table && <TableComponent data={data?.data_table} />}
             </Col>
           </Row>
-          <div className="w-full px-5 max-w-[2400px] ">{data?.kpis && <Kpis data={data?.kpis} />}</div>
+          <div className="w-full px-5  ">{data?.kpis && <Kpis data={data?.kpis} />}</div>
         </>
       )}
     </div>
