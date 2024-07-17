@@ -7,7 +7,7 @@ const App: FC = () => {
   return (
     <>
       <Nabar />
-      <div className="pt-[4rem]">
+      <div className="pt-[4rem] w-full flex justify-center items-center">
         <Dashboard />
       </div>
     </>
