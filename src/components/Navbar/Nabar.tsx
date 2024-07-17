@@ -1,4 +1,3 @@
-import React from 'react'
 import FullTruckLogo from '../logo/FullTruckLogo'
 
 const Nabar = () => {
