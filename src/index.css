@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #e7e9ee;
+}
+.ant-select-selector {
+  border: none !important;
+  background: #f94034 !important;
+  /* border-radius: 6px !important; */
+}
+.ant-select-selection-item {
+  color: white !important;
+}
+.ant-select-arrow {
+  color: white !important;
+}
+.ant-picker-separator {
+  color: white !important;
+}
