@@ -35,13 +35,25 @@ const Dashboard = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [startDate, endDate, timeTarget, aggregateBy]
   )
+  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth)
 
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth)
+    }
+
+    // Add event listener to update width when window is resized
+    window.addEventListener('resize', handleResize)
+
+    // Clean up event listener on component unmount
+    return () => window.removeEventListener('resize', handleResize)
+  }, []) // Empty dependency array means this effect runs only once
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true)
       try {
         const result: unknown = await fetchStatistics(props)
-        console.log('Fetched Data:', result) // Debug log
+        // console.log('Fetched Data:', result) // Debug log
         const typedResult = result as dataTypes
 
         setData(typedResult)
@@ -125,7 +137,7 @@ const Dashboard = () => {
             {data?.scalars && <Scalars data={data?.scalars} />}
           </div>
           <Row
-            gutter={[20, 20]}
+            gutter={windowWidth > 990 ? [20, 20] : [0, 20]}
             className="flex justify-center items-center w-full max-w-[2400px] py-[30px] px-5"
           >
             <Col

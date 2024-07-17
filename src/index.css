@@ -6,6 +6,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   background: #e7e9ee;
+  overflow-x: hidden;
 }
 .ant-select-selector {
   border: none !important;
@@ -20,4 +21,24 @@ body {
 }
 .ant-picker-separator {
   color: white !important;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fcfcfc;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #f94034;
+  border-radius: 6px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(230, 65, 53, 0.89);
 }

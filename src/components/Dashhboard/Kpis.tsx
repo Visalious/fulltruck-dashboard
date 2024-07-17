@@ -45,7 +45,7 @@ const Kpis = ({ data }:KpisProps) => {
       title: 'Label',
       dataIndex: 'label',
       key: 'label',
-      // fixed: 'left',
+      fixed: 'left',
     },
     {
       title: 'Margin Abs',
@@ -72,10 +72,20 @@ const Kpis = ({ data }:KpisProps) => {
   return (
     <div>
       <Card title="Carrier Data" style={{ marginBottom: '20px' }}>
-        <Table dataSource={carrierDataSource} columns={columns} pagination={{ pageSize: 10 }} />
+        <Table dataSource={carrierDataSource} columns={columns} pagination={{ pageSize: 10 }}  scroll={{
+            x: 'calc(300px + 50%)',
+            
+          }}
+          style={{ width: '100%' }}
+          sticky/>
       </Card>
       <Card title="Client Data" style={{ marginBottom: '20px' }}>
-        <Table dataSource={clientDataSource} columns={columns} pagination={{ pageSize: 10 }} />
+        <Table dataSource={clientDataSource} columns={columns} pagination={{ pageSize: 10 }}  scroll={{
+            x: 'calc(300px + 50%)',
+            
+          }}
+          style={{ width: '100%' }}
+          sticky/>
       </Card>
     </div>
   )
